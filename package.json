@@ -1,0 +1,36 @@
+{
+  "name": "use-internet-connection-status",
+  "description": "A React hook to check the internet status of the user.",
+  "version": "0.0.1",
+  "type": "module",
+  "repository": "https://github.com/adv2028/use-internet-connection-status.git",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "typescript": "^6.0.2",
+    "react": "^19.2.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@types/bun": "latest",
+    "rollup": "^4.60.0",
+    "rollup-plugin-dts": "^6.4.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.8.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "author": "Antonella Di Virgilio"
+}
