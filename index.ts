@@ -1,1 +1,1 @@
-console.log("Hello via Bun!");
+export { default as useInternetConnectionStatus } from './src/hooks/useInternetStatus'
