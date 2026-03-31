@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# source code (already compiled to dist/)
+src/
+
+# build configuration
+rollup.config.js
+tsconfig.json
+bunfig.toml
+
+# version control
+.git/
+.gitignore
+.npmignore
+
+# lock files
+bun.lock
+
+# documentation files
+*.md
+!README.md
+!README-en.md
+!README-es.md
