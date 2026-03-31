@@ -73,10 +73,10 @@ This project includes security and best practice configurations in the following
 Configuration file for npm/bun:
 
 ```ini
-ignoreScripts = true    # Prevents scripts from running during installation
+ignore-scripts = true    # Prevents scripts from running during installation
 engine-strict = true    # Fails if Node version doesn't satisfy the engines field in package.json
 audit = true            # Reports vulnerabilities in dependencies after installation
-minimumReleaseAge = 10080 # Prevents installing packages released in the last 7 days
+min-release-age = 10080 # Prevents installing packages released in the last 7 days
 ```
 
 ### `bunfig.toml`
@@ -85,25 +85,23 @@ Bun-specific configuration file:
 
 ```toml
 [install]
-ignoreScripts = true    # Prevents scripts from running during installation
-audit = true            # Reports vulnerabilities in dependencies
+ignoreScripts = true # Prevents scripts from running during installation
+audit = true # Reports vulnerabilities in dependencies
 
-[install.engines]
-strict = true           # Strict engine version (Node >= 22)
+minimumReleaseAge = 604800 # Prevents installing packages released in the last 7 days
 
-[install.resolution]
-minimumReleaseAge = "7d" # Prevents installing packages released in the last 7 days
+minimumReleaseAgeExcludes = [] # These packages will bypass the 7-day minimum age requirement
 ```
 
 ### Configuration Explanation
 
 | Configuration | File | What it does |
 |--------------|------|--------------|
-| `ignoreScripts` | .npmrc, bunfig.toml | Prevents malicious scripts from running during `bun install`. Improves security. |
+| `ignore-scripts` | .npmrc, bunfig.toml | Prevents malicious scripts from running during `bun install`. Improves security. |
 | `engine-strict` | .npmrc | Requires Node.js version to meet `engines` in package.json (>= 22). Prevents incompatible versions. |
 | `audit` | .npmrc, bunfig.toml | After installing, shows a summary of known vulnerabilities in dependencies. |
-| `strict` | bunfig.toml | Strict engine version for bun (equivalent to engine-strict). |
 | `minimumReleaseAge` | .npmrc, bunfig.toml | Prevents installing packages released in the last 7 days. Avoids vulnerabilities in new packages. |
+| `minimumReleaseAgeExcludes` | bunfig.toml | Packages that will bypass the 7-day minimum age requirement |
 
 ### `.npmignore`
 

@@ -2,8 +2,8 @@
 ignoreScripts = true
 audit = true
 
-[install.engines]
-strict = true
+# Only install package versions published at least 7 days ago
+minimumReleaseAge = 604800
 
-[install.resolution]
-minimumReleaseAge = "7d"
+# These packages will bypass the 7-day minimum age requirement
+minimumReleaseAgeExcludes = []

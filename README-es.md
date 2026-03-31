@@ -74,10 +74,10 @@ Este proyecto incluye configuraciones de seguridad y buenas prácticas en los si
 Archivo de configuración para npm/bun:
 
 ```ini
-ignoreScripts = true    # Impide que se ejecuten scripts durante la instalación
+ignore-scripts = true    # Impide que se ejecuten scripts durante la instalación
 engine-strict = true    # Fallará si la versión de Node no satisface el campo engines en package.json
 audit = true            # Reporta vulnerabilidades en las dependencias después de instalar
-minimumReleaseAge = 10080 # Evita instalar paquetes publicados hace menos de 7 días
+min-release-age = 10080 # Evita instalar paquetes publicados hace menos de 7 días
 ```
 
 ### `bunfig.toml`
@@ -88,23 +88,19 @@ Archivo de configuración específico de Bun:
 [install]
 ignoreScripts = true    # Impide que se ejecuten scripts durante la instalación
 audit = true            # Reporta vulnerabilidades en las dependencias
-
-[install.engines]
-strict = true           # Versión estricta del motor (Node >= 22)
-
-[install.resolution]
-minimumReleaseAge = "7d" # Evita instalar paquetes publicados hace menos de 7 días
+minimumReleaseAge = 604800 # Evita instalar paquetes publicados hace menos de 7 días
+minimumReleaseAgeExcludes = [] # Packages that will bypass the 7-day minimum age requirement
 ```
 
 ### Explicación de cada configuración
 
 | Configuración       | Archivo             | Qué hace                                                                                                     |
 | ------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `ignoreScripts`     | .npmrc, bunfig.toml | Impide que se ejecuten scripts maliciosos durante `bun install`. Mejora la seguridad.                        |
+| `ignore-scripts`     | .npmrc, bunfig.toml | Impide que se ejecuten scripts maliciosos durante `bun install`. Mejora la seguridad.                        |
 | `engine-strict`     | .npmrc              | Exige que la versión de Node.js cumpla con `engines` en package.json (>= 22). Evita versiones incompatibles. |
 | `audit`             | .npmrc, bunfig.toml | Después de instalar, muestra un resumen de vulnerabilidades conocidas en las dependencias.                   |
-| `strict`            | bunfig.toml         | Versión estricta del motor para bun (equivalente a engine-strict).                                           |
 | `minimumReleaseAge` | .npmrc, bunfig.toml | Evita instalar paquetes publicados hace menos de 7 días. Previene vulnerabilidades en paquetes nuevos.       |
+| `minimumReleaseAgeExcludes` | bunfig.toml | Paquetes que se instalaran sin respetar el tiempo de menos de 7 días.       |
 
 ### `.npmignore`
 
