@@ -1,2 +1,9 @@
 [install]
 ignoreScripts = true
+audit = true
+
+[install.engines]
+strict = true
+
+[install.resolution]
+minimumReleaseAge = "7d"
