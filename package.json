@@ -1,7 +1,7 @@
 {
   "name": "use-internet-connection-status",
   "description": "A React hook to check the internet status of the user.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "repository": {
     "type": "git",
