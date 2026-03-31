@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/adv2028/use-internet-connection-status/issues"
   },
-  "homepage": "https://github.com/adv2028/use-internet-connection-status#readme-en",
+  "homepage": "https://github.com/adv2028/use-internet-connection-status#readme",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
