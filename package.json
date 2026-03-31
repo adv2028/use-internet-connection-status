@@ -36,7 +36,8 @@
     "tslib": "^2.8.1"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22",
+    "npm": ">=11.12.1"
   },
   "license": "MIT",
   "author": "Antonella Di Virgilio"
